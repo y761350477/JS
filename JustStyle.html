@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="resource/lib/jquery-3.2.1.js"></script>
+    <script>
+        function test() {
+            var testArray = new Array();
+            testArray[0] = "<h1>nihs</h1>";
+            testArray[1] = "<h2>nihs</h2>";
+            testArray[2] = "<h3>nihs</h3>";
+
+            $("#t1").append(testArray);
+        }
+
+    </script>
+    <style>
+        .d1{
+            width: 200px;
+            height: 300px;
+            background-color: lightcoral;
+        }
+
+        .d2{
+            width: 200px;
+            height: 300px;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id = "t1">1</div>
+    <button onclick="test()">Click</button>
+    <div class="d1 d2"></div>
+</body>
+</html>

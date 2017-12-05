@@ -1,0 +1,44 @@
+{
+  "took" : 3,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1978,
+    "max_score" : 1.0,
+    "hits" : [ {
+      "_index" : "call",
+      "_type" : "callList2",
+      "_id" : "AV2X-gBMDoU7JZ3rnoFW",
+      "_score" : 1.0,
+      "_source" : {
+        "method" : "琚彨",
+        "name" : "***",
+        "startTime" : "2009-08-22 18:26:25",
+        "dialNumber" : "60659133",
+        "localNum" : "1380254740",
+        "file_download_url" : "hdfs://emailService/test/sparktest/callList/1380254740.xls",
+        "position" : null,
+        "callDuration" : "728"
+      }
+    }, {
+      "_index" : "call",
+      "_type" : "callList2",
+      "_id" : "AV2X-gBMDoU7JZ3rnoFa",
+      "_score" : 1.0,
+      "_source" : {
+        "method" : "涓诲彨",
+        "name" : "***",
+        "startTime" : "2009-08-22 10:36:38",
+        "dialNumber" : "852968161",
+        "localNum" : "1380254740",
+        "file_download_url" : "hdfs://emailService/test/sparktest/callList/1380254740.xls",
+        "position" : null,
+        "callDuration" : "107"
+      }
+    } ]
+  }
+}

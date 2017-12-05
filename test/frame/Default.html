@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<frameset id="fr" name="fr" rows="63,*,50" cols="*" framespacing="0" frameborder="no" border="0">
+    <frame src="Header.html" name="topFrame" scrolling="no" noresize="noresize" id="topFrame" title="topFrame"/>
+<frameset cols="20%,*" framespacing="0" frameborder="no" border="0">
+
+    <!--
+     leftFrame和mainFrame组合使用，可以实现点击左半部分，实现右半部分的跳转
+    -->
+    <frame src="Left.html" name="leftFrame"/>
+    <frame src="Workbench.html" name="mainFrame"/>
+</frameset>
+    <frame src="Footer.html" name="footerFrame" scrolling="no" noresize="noresize" id="footerFrame" title="footerFrame"/>
+</frameset>
+</html>

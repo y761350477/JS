@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /*function sum(){
+            var result = 0;
+            for(var i = 0, len = arguments.length; i < len; i++){
+                var current = arguments[i];
+                if(isNaN(current)){
+                    throw new Error("not a number exception");
+                }else{
+                    result += current;
+                }
+            }
+
+            return result;
+        }
+
+        alert(sum(10, 20, 30, 40, 50));
+        alert(sum(4, 8, 15, 16, 23, 42));//《迷失》上那串神奇的数字
+        alert(sum("new"));*/
+
+        /*var outter = [];
+        function clouseTest () {
+            var array = ["one", "two", "three", "four"];
+            for(var i = 0; i < array.length;i++){
+                var x = {};
+                x.no = i;
+                x.text = array[i];
+                x.invoke = function(){
+                    alert(i);
+                }
+                outter.push(x);
+            }
+        }
+
+        //调用这个函数
+        clouseTest();
+
+        alert(outter[0].invoke());
+        alert(outter[1].invoke());
+        alert(outter[2].invoke());
+        alert(outter[3].invoke());*/
+
+        /*function Person(name){
+            //private variable
+            var address = "The Earth" ;
+
+            //public method
+            this.getAddress = function (){
+                return address;
+            }
+
+            //public variable
+            this.name = name;
+        }
+
+        Person.prototype.getName = function (){
+            return this.name;
+        }
+
+        //public
+        Person.prototype.setName = function (name){
+            this.name = name;
+        }
+
+        var jack = new Person( "jack" );
+        alert(jack.name);//jack
+        jack.setName("YC");
+        alert(jack.getName());//jack
+        alert(jack.address);//undefined
+        alert(jack.getAddress());//The Earth*/
+        /*function Person(name){
+            //private variable
+            this.address = "The Earth" ;
+
+            //public method
+            this.getAddress = function (){
+                return address;
+            }
+
+            //public variable
+            this.name = name;
+        }
+         var jack = new Person("1", "23", "45");
+        alert(jack.address);*/
+
+        //定义一个人，名字为jack
+        /*var jack = {
+            name : "jack",
+            age : 26
+        }
+
+        //定义另一个人，名字为abruzzi
+        var abruzzi = {
+            name : "abruzzi",
+            age : 26
+        }
+
+        //定义一个全局的函数对象
+        function printName(){
+            return this.name;
+        }
+
+        //设置printName的上下文为jack, 此时的this为jack
+        alert(printName.call(abruzzi, "John Abruzzi"));
+        //设置printName的上下文为abruzzi,此时的this为abruzzi
+
+        alert(printName.apply(jack, ["Jack Sept."]));*/
+
+
+
+        /*var add = function (x, y) {
+            return x + y;
+
+        }
+
+        var a = 0;
+        a = add;
+        var b = a(1, 2);
+        alert(b);
+
+        var obj = {
+            id: "obj1"
+        };
+
+        obj.func = add;
+        alert(obj.func(2, 2));*/
+
+        function adPrint2(str, handler){
+            alert(handler(str));
+        }
+
+        //将字符串转换为大写形式，并返回
+        function up(str){
+            return str.toUpperCase();
+        }
+
+        //将字符串转换为小写形式，并返回
+        function low(str){
+            return str.toLowerCase();
+        }
+
+        adPrint2("Hello, world", up);
+        adPrint2("Hello, world", low);
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="test()">Click</button>
+    <script src="../../resource/lib/jquery-3.2.1.js"></script>
+</body>
+</html>

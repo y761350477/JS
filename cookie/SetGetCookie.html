@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑框输入时动态匹配值，点击匹配值赋值到编辑框</title>
+
+    <!--
+    问题： 编辑框搜索时动态匹配值，点击外部隐藏匹配结果(通过编辑框失去焦点的处理方式，出现了点击匹配结果编辑框没法获取点击处的结果值的问题)
+    处理方式： 通过$(document).click(function () {});的方式设置全局的触发事件，在点击编辑框外部时隐藏匹配结果，而通过编辑框的值改变触发的事件来显示匹配结果
+              ，而点击匹配结果时触发的事件优先级高于全局的触发事件，从而实现点击赋值后，触发全局的隐藏事件来达在编辑框赋值，后隐藏匹配结果的效果!
+    -->
+    <script src="../resource/lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+<input type="text" name="test1" id="test1" oninput="getCookies()">
+<button onclick="setCookies()">Click</button>
+<ul id="con" style="list-style-type:none"></ul>
+
+
+<script>
+    var getHistory = "";// cookie存的所有信息(用于验证输入值是否被包含，如果包含就删掉前面的放到最后面来)
+    
+    $(document).click(function () {
+        $("#con").css("display","none");
+    });
+
+    $('#test1').click(function (e) {
+        e.stopPropagation();// 阻止全局事件
+        getCookies();
+    });
+
+    function setCookies() {
+        var setCookie = $("#test1").val();
+        var getInputItem = setCookie + ",";
+        if (getHistory.indexOf(getInputItem) < 0) {
+            getHistory += setCookie + ",";
+            document.cookie = escape(getHistory);
+        } else {
+            getHistory = getHistory.replace(getInputItem, "");
+            getHistory += getInputItem;
+            document.cookie = escape(getHistory);
+        }
+
+    }
+
+    function getCookies() {
+        var getInfo = document.cookie;
+        getInfo = unescape(getInfo);
+        getInfo = getInfo.substring(0, getInfo.length-1);
+        if(getInfo != "undefined") {
+            $("#con").css("display", "block");
+            var everyHistoryInfo = new Array();
+            everyHistoryInfo = getInfo.split(",");
+            var con = "";
+            for (var i = everyHistoryInfo.length - 1; i >= 0; i--) {
+                if (i > (everyHistoryInfo.length - 11)) {
+                    if (everyHistoryInfo[i].indexOf($("#test1").val()) >= 0) {
+                        con += "<li onclick='getSelectInfo(" + i + ")' id='liInfo" + i + "'>" + everyHistoryInfo[i] + "</li>";
+                    }
+                }
+            }
+            $("#con").html(con);
+        }
+    }
+
+    function getSelectInfo(i) {
+        var getLiValue = $("#liInfo" + i).text();
+        $("#test1").val(getLiValue);
+        $("#con").css("display","none");
+    }
+
+</script>
+</body>
+</html>

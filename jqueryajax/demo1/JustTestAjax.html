@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../resource/lib/jquery-3.2.1.js"></script>
+    <script>
+        var url = "https://api.map.baidu.com/location/ip?ak=djbfrkOybfajGHurEq1kqrrHB5UGuXln&ip=211.97.155.39";
+        function test() {
+            $.ajax({
+                url: url,
+                type: "get",
+                data: {},
+                dataType: "jsonp",
+                success: function (data) {
+                    alert(data.content.address);
+//                    var con = "";
+                    /*$.each(data,function(index,item) {
+                        con+="<li>姓名："+item.name+"</li>";
+                        con+="<li>岗位："+item.job+"</li>";
+                        con+="<li>性别："+item.sex+"</li>";
+                        con+="<li>现居地："+item.address+"</li>";
+                    });
+                    $("#con").html(con);*/
+                },
+                error: function () {
+                    alert("失败");
+                },
+
+            });
+        }
+    </script>
+</head>
+<body>
+<button onclick="test()">Click</button>
+<ul id="con"></ul>
+</body>
+</html>

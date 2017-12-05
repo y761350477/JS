@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.0.min.js" ></script>
+    <script type="text/javascript">
+        function imgClick(t) {
+            var array = new Array();
+            var res = getCookie("img_");
+            var imgJson = {"src": $(t).attr("src"), "title": $(t).attr("title")};
+            if (res != '') {
+                var index = -1;
+                array = jQuery.parseJSON(res);
+                $.each(array, function(k ,v) {
+                    if (v.src == $(t).attr("src")) {
+                        index = jQuery.inArray(v, array);
+                    }
+                });
+                if (index > -1) {
+                    // jQuery和JS并没有单独用于删除数组中值的方法，但可以用splice()通过复查分割实现
+                    array.splice(index,1);// 删除与当前重复的记录
+                }
+
+            }
+            array.push(imgJson);
+            // 最多显示4条记录
+            if (array.length > 4) {
+                array.splice(0,array.length - 4);
+            }
+            setCookie("img_", JSON.stringify(array), 5 * 60 * 1000); // 有效期为5分钟
+        }
+
+        /**
+         * 创建和存储cookie
+         * @param {Object} name 名称
+         * @param {Object} value 值
+         * @param {Object} expiredays 有效时间，单位：毫秒
+         */
+        function setCookie(name, value, expiredays) {
+            var exDate = new Date();
+            // 设置有效时间
+            exDate.setTime(exDate.getTime() + expiredays);
+            if(expiredays == null) {
+                document.cookie = name + "=" + escape(value);
+            } else {
+                document.cookie = name + "=" + escape(value) + ";expires=" + exDate.toGMTString();
+            }
+        }
+
+        /**
+         * 获取cookie中的值
+         * @param {Object} name
+         */
+        function getCookie(name) {
+            if(document.cookie.length > 0) {
+                var start = document.cookie.indexOf(name + "=");
+                if(start != -1) {
+                    start = document.cookie.indexOf("=", start) + 1;
+                    var end = document.cookie.indexOf(';', start);
+                    if(end == -1) end = document.cookie.length;
+                    return unescape(document.cookie.substring(start, end));
+                }
+            }
+
+            return "";
+        }
+
+        function findCookie() {
+            var res = getCookie("img_");
+            console.log(res);
+            if (res != "") {
+                var imgJson = jQuery.parseJSON(res);
+                $.each(imgJson, function(k, v) {
+                    var img = '<img src="'+ v.src +'" title="' + v.title + '" style="border: 1px solid blue;"/>';
+                    $("#divTest").html($("#divTest").html() + img);
+                });
+            }
+        }
+    </script>
+</head>
+
+<body onload="findCookie()">
+<div style="width: 900px; height: 500px; margin: 30px;margin-bottom: 0px;border: 1px solid red;overflow-y: auto;">
+    <img src="img/avatar.png" title="人物1" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/avatar04.png" title="人物2" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/avatar2.png" title="人物3" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/avatar3.png" title="人物4" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/avatar5.png" title="人物5" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/photo3.jpg" title="人物6" width="128" height="128" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/user3-128x128.jpg" title="人物7" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/user4-128x128.jpg" title="人物8" style="border: 1px solid blue;" onclick="imgClick(this)" />&nbsp;
+    <img src="img/user7-128x128.jpg" title="人物9" style="border: 1px solid blue;" onclick="imgClick(this)" />
+</div>
+<div id="divTest" style="width: 900px; height: 500px; margin: 30px;margin-bottom: 0px;border: 1px solid red;"></div>
+</body>
+
+</html>

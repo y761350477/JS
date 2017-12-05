@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JustMain2</title>
+    <script>
+
+        /*函数做参数的使用*/
+        function add(a, b) {
+            return a + b;
+        }
+
+        function test(f, a, b) {
+            return f(a, b);
+        }
+
+        alert(test(add,1,1));
+
+        function print(s) {
+            document.write(s + "<br/>");
+        }
+
+        function println(s) {
+            print(s + "<br/>")
+        }
+
+        function test1(s) {
+            document.write(s);
+        }
+
+        test1("hello" + "<br/>");
+        test1("nihs" + "<span style='color:pink'>nihs</span>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../resource/lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+<!--多选框，默认多个选项的操作-->
+<input type="checkbox" name="threadType" value="走私普通货物" id="a">走私普通货物
+<input type="checkbox" name="threadType" value="走私枪支" id="b">走私枪支
+<input type="checkbox" name="threadType" value="走私废物" id="c">走私废物
+<input type="checkbox" name="threadType" value="走私毒品" id="d">走私毒品
+<input type="checkbox" name="threadType" value="走私红油" id="e">走私红油
+<input type="checkbox" name="threadType" value="走私文物" id="f">走私文物
+<input type="checkbox" name="threadType" value="其他" id="g">其他
+<script>
+    var getArray = new Array("走私普通货物","走私废物","走私红油");
+    for (var i = 0; i < getArray.length; i ++) {
+        if (getArray[i] == "走私普通货物") {
+            var chk = document.getElementById('a');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "走私枪支") {
+            var chk = document.getElementById('b');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "走私废物") {
+            var chk = document.getElementById('c');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "走私毒品") {
+            var chk = document.getElementById('d');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "走私红油") {
+            var chk = document.getElementById('e');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "走私文物") {
+            var chk = document.getElementById('f');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+        if (getArray[i] == "其他") {
+            var chk = document.getElementById('g');//通过getElementById获取节点
+            chk.checked = true;//设置checked为选中状态
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

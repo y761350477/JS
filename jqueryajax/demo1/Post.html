@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <script src="../../resource/lib/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#bt").click(function () {
+
+                /*
+                 get语法：$get(url,{param1:"value1",param2:"value2"},function (data,status,object){})
+                 如果请求的是json文件，则返回的请求信息内容是对象；
+                 如果请求的是html文件，则返回的请求信息内容是源码；
+                 注意：\t在jquery中没有效果，\n有效果；
+                 */
+                $.post('../../extra/data/JsonData.json',
+                    {
+                        param1: "value1",
+                        param2: "value2"
+                    },
+                    function (data, status, object) {
+                        alert(1);
+                        alert("内容:" + data + "\n状态:" + status + "\n对象:" + object);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="bt">Jquery-Ajax的Post提交方式</button>
+</body>
+</html>

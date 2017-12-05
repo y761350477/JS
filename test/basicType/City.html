@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/City.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+<select id="cmbProvince" name="cmbProvince"></select>
+<select id="cmbCity" name="cmbCity"></select>
+<select id="cmbArea" name="cmbArea"></select>
+<!--<button type="button" onclick="test()">Click</button>-->
+<script type="text/javascript">
+    addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+    /*$(function () {
+//        document.getElementById("cmbProvince")[2].selected=true;// 设置select的默认选中下标
+
+//        $('#cmbProvince').find('option').eq(1).attr("selected","selected");// 设置select的默认选中下标
+
+//        $("#cmbProvince").val("上海");// 设置select的默认选中值
+//        $("#cmbProvince").val();//   获取select的值
+    });
+    function test() {
+        /!*var a = $('#cmbProvince').prop('selectedIndex');//  获取select的下标
+        var b = $('#cmbCity').prop('selectedIndex');//  获取select的下标
+        var c = $('#cmbArea').prop('selectedIndex');//  获取select的下标
+        alert(a);
+        alert(b);
+        alert(c);*!/
+        var a = $('#cmbProvince').prop('selectedIndex');//  获取select的下标
+        alert(a);
+        var b = 0;
+        if(a > 0) {
+//            $('#cmbCity').find('option').eq(1).attr("selected","selected");
+            $("#cmbCity").val("广元市");
+            var b = $('#cmbCity').prop('selectedIndex');//  获取select的下标
+
+        }
+        if(b>0) {
+            $('#cmbArea').find('option').eq(2).attr("selected","selected");
+        }
+
+
+    }*/
+</script>
+</body>
+</html>

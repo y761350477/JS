@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/lib/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("input[name='check']:eq(1)").each(function () {
+                    alert($(this).val());
+                });
+            });
+            var testName = document.getElementsByName("check");
+            alert(testName.value);
+            alert($("#testradio").val());
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="check" value="1">1
+    <input type="checkbox" name="check" value="2">2
+    <input type="checkbox" name="check" value="3">3
+    <input type="checkbox" name="check" value="4">4
+    <input type="checkbox" name="check" value="5">5
+    <input type="checkbox" name="check" value="6">6
+    <input type="radio" name="testradio" id="testradio" value="radio">radio
+<button>Click</button>
+</body>
+</html>

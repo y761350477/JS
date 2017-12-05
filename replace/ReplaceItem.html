@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resource/lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+<input type="text" name="textParam" id="textParam">
+<button onclick="test()">Click</button>
+<script>
+    function test() {
+        var getInputInfo = $("#textParam").val();
+        var regEx = /\s+/g;
+        var replace = getInputInfo.replace(regEx, " ");
+        alert(replace);
+    }
+</script>
+</body>
+</html>

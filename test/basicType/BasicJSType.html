@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BasicJSType</title>
+    <script type="text/javascript">
+        /**
+         * JavaScript五种基本数据类型和对象类型(对象、数组、函数):
+         * 字符串(String)
+         * 数字(包含小数)(Number)
+         * 布尔值(boolean)
+         * Null(值为空) Null类型也只有一个值，即null。null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。
+         * Undefined(未赋值状态) Undefined类型只有一个值，即undefined。当声明的变量还未被初始化时，变量的默认值为undefined。
+         * 注意：
+         * 1、\"代表转义字符，可以正常输出引号；
+         * 2、\t在js中无效；
+         * 3、对象和数组认为是上面的一种复杂组合；
+         * 4、变量是动态的，不会像java中多次赋值报错；
+         * 5、变量可以不用声明类型；
+         * 6、每个变量都被看成是一个对象；
+         */
+
+        /*JavaScript中变量拥有动态类型。这意味着相同的变量可用作不同的类型*/
+        /*var x;
+        alert(x);
+        var x = null;
+        alert(x);
+        var x = 1;
+        alert(x)
+        var x = 'a';
+        alert(x);*/
+
+        /*字符串中夹杂字符串(字符串可以使用单引号)*/
+        /*var name = 'body';
+        alert(name)
+        var name = "body'nihs'";
+        alert(name);
+        var name = 'body"nihs"';
+        alert(name);
+        var name = "body\"nihs\"";*/
+
+        /*数组的三种创建方式*/
+        /*var cars=new Array();
+        cars[0]="Audi";
+        cars[1]="BMW";
+        cars[2]="Volvo";
+        alert(cars.length);
+
+        var cars=new Array("Audi","BMW","Volvo");
+        alert(cars[1]);
+
+        var cars=["Audi","BMW","Volvo"];
+        alert(cars[1])*/
+
+        /*对象的赋值和获取*/
+        /*var person={firstname:"Bill", lastname:"Gates", id:5566};
+        alert(person.firstname);
+        alert(person["firstname"]);
+        var person={
+            firstname : "Bill",
+            lastname  : "Gates",
+            id        :  5566
+        };
+        alert(person.firstname);
+        alert(person["firstname"]);*/
+
+        /*声明变量类型(JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。)*/
+        var carname = new String;
+        var x = new Number;
+        var y =  new Boolean;
+        var cars =  new Array;
+        var person = new Object;
+
+        var testDate = new Date(1991, 04, 05);
+        alert(testDate);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
