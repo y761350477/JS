@@ -1,0 +1,57 @@
+<!--
+  User: YC
+  Date: 2017/12/5
+  Time: 18:13
+  DESC: 检测输入的格式Num和Email
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * User: YC
+         * Date: 2017/12/5
+         * Time: 18:10
+         * DESC: 判断输入的是否是数字
+         */
+        function checkNum() {
+            var re = /^[0-9]+.?[0-9]*$/; // YC: 2017/12/5 18:11, 判断正整数
+            var nubmer = document.getElementById("test1").value;
+            if (!re.test(nubmer)) {
+                alert("请输入数字");
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        /*
+         * User: YC
+         * Date: 2017/12/5
+         * Time: 18:10
+         * DESC: 判断输入的是否是邮箱格式
+         */
+        function checkEmail() {
+            var email = document.getElementById("test2").value;
+            if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)) {
+                alert("邮箱格式错误!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="https://www.baidu.com/" method="port">
+        <input id="test1"/>
+        <input type="submit" value="校验Num" onclick="return checkNum()">
+    </form>
+    <br>
+    <form action="https://www.baidu.com/" method="port">
+        <input id="test2"/>
+        <input type="submit" value="校验Email" onclick="return checkEmail()">
+    </form>
+</body>
+</html>

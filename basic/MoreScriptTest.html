@@ -1,0 +1,40 @@
+<!--
+  User: YC
+  Date: 2017/12/5
+  Time: 17:23
+  DESC: 多个script的操作总结
+
+  问题：验证script标签是否在html中任意位置生效？是否在html中声明多个script标签同时生效？
+  1、经过测试发现一个html文件中可以有多个script,而且每个互不影响，可以同时作用，相当于一个script；
+  2、script的可以在html中任意位置生效，知识习惯性把他放在head里面；
+  3、猜想是否style的属性标签也有上面的效果呢？经验证发现和上面效果一样，可以在文件中任意位置生效，可以多个style标签同时使用；
+
+  发现：
+  1、标签外只能使用<!-- --\>注释；
+  2、在标签内可以使用//或者/**/注释；
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestBasic</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+
+    <script>
+        function bt1() {
+            alert("click_button1");
+        }
+    </script>
+
+    <script>
+        function bt2() {
+            alert("click_button2");
+        }
+    </script>
+</head>
+<body>
+    <button id="bt1" onclick="bt1()">Click1</button><br/>
+    <button id="bt2" onclick="bt2()">Click2</button>
+</body>
+</html>

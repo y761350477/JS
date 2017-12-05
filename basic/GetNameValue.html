@@ -1,0 +1,29 @@
+<!--
+  User: YC
+  Date: 2017/12/5
+  Time: 17:40
+  DESC: 根据name名称获取value值，如果多个name相同，通过:eq(下标(从零开始))获取相应的值
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                alert($("input[name='t1']:eq(0)").val()); // YC: 2017/12/5 17:56, 通过jquery的方式获取name名称下的value值
+                alert(document.getElementsByName("t1")[1].value); // YC: 2017/12/5 17:57, 通过原生JS获取name名称下的value值
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input name="t1"/>
+<input name="t1"/>
+<input name="t1"/>
+<button>Click</button>
+</body>
+</html>
