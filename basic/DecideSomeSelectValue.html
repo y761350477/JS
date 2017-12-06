@@ -1,0 +1,47 @@
+<!--
+  User: YC
+  Date: 2017/12/6
+  Time: 17:27
+  DESC: 判断多个select选框是否有选中值
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<select name="select" id="select1">
+    <option value=""></option>
+    <option value="1"></option>
+</select>
+
+<select name="select" id="select2">
+    <option value=""></option>
+    <option value="1"></option>
+</select>
+
+<button onclick="getTest()">Click</button>
+
+<script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+<script>
+    var status = 0;
+    function getTest() {
+        var a = new Array();
+        a = document.getElementsByName("select");
+        for (var i = 0; i < a.length; i++) {
+            var nameValue = a[i].value;
+            if (nameValue.length != 0) {
+                status = 1;
+            }
+        }
+
+        if (status == 0) {
+            alert("请选择类型！");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
