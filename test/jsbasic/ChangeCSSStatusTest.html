@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../extra/lib/jquery-3.2.1.js"></script>
+    <script>
+        /* 操作摘要
+         * $(selector).toggleClass(class,switch);switch为true只能增加,false只能删除;
+         * toggleClass() 对设置或移除被选元素的一个或多个类进行切换。
+         * 该方法检查每个元素中指定的类。如果不存在则添加类，如果已设置则删除之。这就是所谓的切换效果。
+         * 不过，通过使用 "switch" 参数，您能够规定只删除或只添加类。
+         *
+         * $(selector).addClass(class);
+         * addClass() 方法向被选元素添加一个或多个类。
+         * 该方法不会移除已存在的 class 属性，仅仅添加一个或多个 class 属性。
+         * 提示：如需添加多个类，请使用空格分隔类名。
+         *
+         * $(selector).removeClass(class)
+         * removeClass() 方法从被选元素移除一个或多个类。
+         * 注释：如果没有规定参数，则该方法将从被选元素中删除所有类。
+         *
+         * 总结:对同一个类选择器的背景设置取决于在CSS样式中最靠下的CSS那个的样式设置，;
+         */
+
+        /*toggleClass的操作，不存在创建类名，存在删除类名*/
+        function test() {
+            $("#div1").toggleClass("changeColor");
+        }
+        var i = 0;
+
+        /*通过addClass和removeClass的组合使用来实现toggleClass的效果*/
+        function testAdd() {
+            if(++i%2 == 0) {
+                $("#div1").addClass("changeColor");
+            } else {
+                $("#div1").removeClass("changeColor");
+            }
+        }
+    </script>
+    <style>
+        .test{
+            background-color: deepskyblue;
+        }
+        .changeColor{
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1" class="test" style="width: 300px;height: 300px;"></div>
+    <div class="div2"></div>
+    <button onclick="testAdd()">Click</button>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StructureTest</title>
+    <script src="../extra/lib/jquery-3.2.1.js"></script>
+    <script>
+        /*JS构造函数的使用*/
+        function Person(w, h) {
+            this.width = w;
+            this.height = h;
+            this.perimeter = function() {
+                return this.width * this.height;
+            }
+        }
+
+        var person1 = new Person(5,10);
+        alert(person1.perimeter()); //perimeter()有括号是因为获取的是个方法，如果只是单纯的获取变量是不需要加括号的
+        person1.width = 10;
+        alert(person1.perimeter());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

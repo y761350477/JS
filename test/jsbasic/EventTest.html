@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventTest</title>
+    <script src="../extra/lib/jquery-3.2.1.js"></script>
+    <script>
+        /*三种对话框*/
+        /*alert("弹出框");
+        confirm("确定框");
+        prompt("输入框");*/
+
+        if(confirm("你眼继续吗？")) {
+            alert("继续！");
+        } else {
+            alert("再见！");
+        }
+        var name = prompt("你的名字:");
+        alert("你好"+name);
+    </script>
+</head>
+<!--
+    onload页面装载完成要显示之前的操作
+    onunload页面关闭或者刷新时的操作
+    -->
+<!--<body onload="alert('DuDu!')" onunload="alert('HaHa!')">-->
+<body onload="alert('Hi!')" onunload="">
+<!--
+    onmouseover鼠标进入区域的操作
+    onmouseout鼠标离开区域的操作
+-->
+<span onmouseover="status='YangChen';" onmouseout="status='';">测试鼠标的进入离开</span>
+</body>
+</html>

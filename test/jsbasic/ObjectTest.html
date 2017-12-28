@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ObjectTest</title>
+    <script src="../extra/lib/jquery-3.2.1.js"></script>
+    <script>
+
+        /*第一种创建对象的方式*/
+        var testObject = new Object();
+        testObject.name = "YangChen";
+        testObject.sex = "男";
+        testObject.age = 19;
+
+        /*对象的属性作为对象扩充赋值*/
+        testObject.book = new Object();
+        testObject.book.name = "三国演义";
+        testObject.book.price = 21;
+        alert(testObject.book.name);
+
+        /*第二种创建对象的方式*/
+        var testObject1 = {name : "DuBaoBao", sex : "女", age : 19};
+
+        /*遍历对象*/
+        for (var obj in testObject) {
+
+            /*obj表示对象名,testObject[obj]表示对象的值*/
+            alert(obj + "=" + testObject[obj]);
+        }
+
+        for (var obj in testObject1) {
+            alert(obj + "=" + testObject1[obj]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
