@@ -1,0 +1,30 @@
+<!--
+  author YC
+  create 2017/12/28 11:18
+  根据name获取value值
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../extra/lib/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+            alert($("input[name='t1']:eq(1)").val());
+
+                /*var getData = document.getElementsByName("t1")[1].value;
+                alert(getData);*/
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input name="t1"/>
+<input name="t1"/>
+<input name="t1"/>
+<button>Click</button>
+</body>
+</html>
