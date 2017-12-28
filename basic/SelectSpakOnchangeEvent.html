@@ -1,0 +1,26 @@
+<!--
+ YC
+ 2017/12/23 0:21
+
+ 选择同一个文件触发onchange事件的方法
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择同一个文件触发onchange事件的方法</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+    <script>
+        function clickEvent() {
+            $("#testFile").val("");
+        }
+
+        function changeEvent() {
+            alert($("#testFile").val());
+        }
+    </script>
+</head>
+<body>
+<input type="file" name="testFile" id="testFile" onclick="clickEvent()" onchange="changeEvent()">
+</body>
+</html>
