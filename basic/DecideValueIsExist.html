@@ -1,0 +1,36 @@
+<!--
+  author YC$
+  create 2017/12/11$ 10:18$
+  检测输入过的信息是否包含相同,如果有则弹框提示.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+    <script>
+        var personArray = new Array();
+        function personBT() {
+            var s = $("#person").val();
+            var strArray = s.replace(/\s+/g, " ");
+            var num = strArray.split(" ");
+            var suName = num[0];
+            var suPhone = num[1];
+            var suEmail = num[2];
+            for(var i = 0; i < personArray.length; i++) {
+                if (suPhone == personArray[i].suPhone) {
+                    alert("手机号码已存在！");
+                }
+            }
+            var personInfo = {"suPhone": suPhone, "suEmail": suEmail};
+            personArray.push(personInfo);
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="person" id="person">
+<br>
+<button id="personButton" onclick="personBT()">Click</button>
+</body>
+</html>
