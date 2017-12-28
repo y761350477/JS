@@ -1,0 +1,33 @@
+<!--
+  author YC
+  create 2017/12/26 10:02
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div {
+            height: 2000px;
+            width: 1000px;
+            background-color: orange;
+        }
+    </style>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+<button id="bt" onclick="test()">Click</button>
+<div class="div"></div>
+<script>
+    function test() {
+        // 获取页面可视高度
+        var getHeight = document.body.clientHeight;
+        // 滚动滚动条到
+        window.scrollTo(0, getHeight);
+    }
+
+</script>
+</body>
+</html>
