@@ -31,22 +31,38 @@
                 }
             }*/
 
-            // 获取radio选中值
-            var value = $("input[name='radioInfo']:checked").val();
-            alert(value);
-
-            // 根据ID设置默认选中
+            // 根据id设置默认选中
             var box = document.getElementById("checkboxInfo3");
             box.checked = true;
             // 使用如下Jquery的方法并不能设置默认选中
             /*var box1 = $("#checkboxInfo3");
             box1.checked = true;*/
 
+            // 获取radio选中值
+            var value = $("input[name='radioInfo']:checked").val();
+            alert(value);
+
             // 判断checkbox是否选中
             var value1 = $("#checkboxInfo3").is(":checked");
-            alert(value1)
+            alert(value1);
 
-        })
+            // 获取checkbox选中值
+            if($("#radioInfo").is(":checked")){
+                var value = $("#radioInfo").val();
+                alert(value);
+            }
+
+        });
+
+        // 修改checkbox选中状态
+        function test() {
+            document.getElementById("radioInfo").checked = true;
+        }
+
+        // 修改checkbox未选中状态
+        function test1() {
+            document.getElementById("radioInfo").checked = false;
+        }
 
         // 设置checkbox全选
         var isCheckAll = false;// 标记是否全选
@@ -62,7 +78,7 @@
                 });
                 isCheckAll = true;
             }
-        };
+        }
 
         // 获取checkbox选中值
         var values = new Array();
@@ -80,12 +96,14 @@
             for (var i = 0; i < values.length; i++) {
                 alert(values[i]);
             }
-        };
+        }
     </script>
 </head>
 <body>
 <div>单选框</div>
-<input type="radio" name="radioInfo" id="radioInfo" value="男" checked>男
+<button onclick="test()">选中</button>
+<button onclick="test1()">取消选中</button>
+<input type="radio" name="radioInfo" id="radioInfo" value="男">男
 <input type="radio" name="radioInfo" id="radioInfo1" value="女">女
 <hr>
 <div>多选框</div>

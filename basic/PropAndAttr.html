@@ -1,0 +1,58 @@
+<!--
+  author YC
+  create 2018/1/2 13:45
+  prop和attr对于操作点击一个按钮同时选中两个复选框的问题
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+</head>
+<body>
+<input type="checkbox" id="checkbox1" />A
+<input type="checkbox" id="checkbox2" />B
+<script>
+    $("#checkbox1").click(function(){
+        var bol = $('#checkbox1').is(':checked');
+        if(bol){
+            $('#checkbox2').attr("checked",'check');
+        }else{
+            $('#checkbox2').removeAttr("checked");
+        }
+    })
+    $("#checkbox2").click(function(){
+        var bol = $('#checkbox2').is(':checked');
+        if(bol){
+            $('#checkbox1').attr("checked",'check');
+        }else{
+            $('#checkbox1').removeAttr("checked");
+        }
+    })
+</script>
+
+<hr>
+<input type="checkbox" id="checkbox3" />A1
+<input type="checkbox" id="checkbox4" />B1
+<script>
+    $("#checkbox3").click(function(){
+        var bol = $('#checkbox3').is(':checked');
+        if(bol){
+            $('#checkbox4').prop("checked",true);
+        }else{
+            $('#checkbox4').prop("checked",false);
+        }
+    })
+    $("#checkbox4").click(function(){
+        var bol = $('#checkbox4').is(':checked');
+        if(bol){
+            $('#checkbox3').prop("checked",true);
+        }else{
+            $('#checkbox3').prop("checked",false);
+        }
+    })
+</script>
+
+</body>
+</html>
