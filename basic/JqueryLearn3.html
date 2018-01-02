@@ -1,0 +1,83 @@
+<!--
+  author YC
+  create 2018/1/2 16:25
+  几种示例, 为什么使用Jquery的原因之一
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryLearn3</title>
+</head>
+<body>
+<!--给网页中的所有<p>元素添加onclick事件-->
+<p>测试1</p>
+<p>测试2</p>
+<script>
+    var items = document.getElementsByTagName("p");
+    for (var i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+            //doing something
+        };
+    }
+</script>
+
+<!--使一个特定的表格隔行变色-->
+<table id="tb">
+    <tbody>
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+    </tr>
+    <tr>
+        <td>第2行</td>
+        <td>第2行</td>
+    </tr>
+    <tr>
+        <td>第3行</td>
+        <td>第3行</td>
+    </tr>
+    <tr>
+        <td>第4行</td>
+        <td>第4行</td>
+    </tr>
+    <tr>
+        <td>第5行</td>
+        <td>第5行</td>
+    </tr>
+    <tr>
+        <td>第6行</td>
+        <td>第6行</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    var item = document.getElementById("tb");
+    var tbody = item.getElementsByTagName("tbody")[0];
+    var trs = tbody.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        if (i % 2 == 0) {
+            trs[i].style.backgroundColor = "orange";
+        }
+    }
+</script>
+
+<!--对多选框进行操作，输出选中的多选框的个数-->
+<input type="checkbox" name="check" value="1" checked="checked">
+<input type="checkbox" name="check" value="2" >
+<input type="checkbox" name="check" value="3" checked="checked">
+<input type="button" value="你选中的个数" id="btn">
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var arrays = new Array();
+        var items = document.getElementsByName("check");
+        for (i = 0; i < items.length; i++) {
+            if (items[i].checked) {
+                arrays.push(items[i].value);
+            }
+        }
+    };
+</script>
+</body>
+</html>
