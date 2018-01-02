@@ -1,0 +1,37 @@
+<!--
+  author YC
+  create 2018/1/2 17:47
+  关于塌陷的研究
+  问题: 一个大的左浮动div中包含两个小的左浮动元素, 为什么第二行的文字没有把里面的框框顶下去呢?
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            border: 1px solid red;
+        }
+
+        .div1, .div2 {
+            margin: 5px;
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    这是一个测试的Demo, 测试里面的浮动
+    <div class="div1"></div>
+    <div class="div2"></div>
+</div>
+</body>
+</html>
