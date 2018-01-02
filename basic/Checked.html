@@ -1,0 +1,100 @@
+<!--
+  author YC
+  create 2017/12/29 9:35
+  radio单选框默认被选中的设置
+  check多选框默认被选中的设置
+  思考:
+  1、如何获取选中值?
+  2、如何设置选中值?
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checked</title>
+    <script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            // 单选框: 根据value设置默认选中
+            /*var obj2 = document.getElementsByName("radioInfo");
+            for (var k = 0; k < obj2.length; k++) {
+                if (obj2[k].value == "女") {
+                    obj2[k].checked = true;
+                }
+            }
+
+            // 多选框: 根据value设置默认选中
+            var obj22 = document.getElementsByName("checkboxInfo");
+            for (var k = 0; k < obj22.length; k++) {
+                if (obj22[k].value == "唱歌") {
+                    obj22[k].checked = true;
+                }
+            }*/
+
+            // 获取radio选中值
+            var value = $("input[name='radioInfo']:checked").val();
+            alert(value);
+
+            // 根据ID设置默认选中
+            var box = document.getElementById("checkboxInfo3");
+            box.checked = true;
+            // 使用如下Jquery的方法并不能设置默认选中
+            /*var box1 = $("#checkboxInfo3");
+            box1.checked = true;*/
+
+            // 判断checkbox是否选中
+            var value1 = $("#checkboxInfo3").is(":checked");
+            alert(value1)
+
+        })
+
+        // 设置checkbox全选
+        var isCheckAll = false;// 标记是否全选
+        function swapCheck() {
+            if (isCheckAll) {
+                $("input[type='checkbox']").each(function () {
+                    this.checked = false;
+                });
+                isCheckAll = false;
+            } else {
+                $("input[type='checkbox']").each(function () {
+                    this.checked = true;
+                });
+                isCheckAll = true;
+            }
+        };
+
+        // 获取checkbox选中值
+        var values = new Array();
+        function setAids() {
+            values.splice(0, values.length);
+
+            // 虽然下面的name='checkboxInfo'中的name可以替换成id, 但是考虑到id的唯一性, 所以改成了name;
+            $("input[type='checkbox'][name='checkboxInfo']").each(function() {
+                if ($(this).is(":checked")) {
+                    values.push($(this).val());
+                }
+            });
+
+            // 遍历选中项
+            for (var i = 0; i < values.length; i++) {
+                alert(values[i]);
+            }
+        };
+    </script>
+</head>
+<body>
+<div>单选框</div>
+<input type="radio" name="radioInfo" id="radioInfo" value="男" checked>男
+<input type="radio" name="radioInfo" id="radioInfo1" value="女">女
+<hr>
+<div>多选框</div>
+<button onclick="swapCheck()">全选</button>
+<button onclick="setAids()">获取checkbox选中值</button>
+<input type="checkbox" name="checkboxInfo" id="checkboxInfo" value="看电影">看电影
+<input type="checkbox" name="checkboxInfo" id="checkboxInfo1" value="玩游戏">玩游戏
+<input type="checkbox" name="checkboxInfo" id="checkboxInfo2" value="唱歌">唱歌
+<input type="checkbox" name="checkboxInfo" id="checkboxInfo3" value="学习">学习
+
+</body>
+</html>
