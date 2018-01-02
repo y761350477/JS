@@ -1,0 +1,45 @@
+<!--
+  author YC
+  create 2018/1/2 15:37
+  Jquery对象和JS对象之间的转换
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryLearn1</title>
+</head>
+<body>
+<input type="checkbox" name="cr" id="cr" checked>Jquery对象和JS对象之间的转换
+<script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+<script>
+    /*
+     * Jquery对象 -> JS对象
+     * 两种方式:
+     * 1、[index]
+     * 2、get(index)
+     */
+    var $cr = $("#cr");
+    var cr = $cr.get(0);
+    var cr1 = $cr[0];
+
+    /*
+     * JS对象 -> Jquery对象
+     */
+    var cr = document.getElementById("cr");
+    var $cr = $(cr);
+
+    /*
+     * 模拟注册同意条款
+     */
+    $(function () {
+        var $cr = $("#cr");
+        $cr.click(function () {
+            if ($cr.is(":checked")) {
+                alert("已选中!");
+            }
+        });
+    });
+</script>
+</body>
+</html>
