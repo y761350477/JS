@@ -21,8 +21,7 @@ a:hover {
 .SubCategoryBox {
     width: 600px;
     margin: 0 auto;
-    margin-top: 40px;
-    text-align: center;
+    padding-top: 20px;
 }
 
 .SubCategoryBox ul {
