@@ -1,0 +1,25 @@
+<!--
+  author YC
+  create 2018/1/3 15:52
+  模拟超链接被点击
+  困扰了很久的模拟超链接被点击的问题终于被解决了
+  注: 应该是模拟链接内的文字被点击, 而不是链接本身被点击
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestA</title>
+</head>
+<body>
+<button id="bt">Click</button>
+<a href="https://www.baidu.com/" id="a" name="a"><span id="span">百度</span></a>
+<script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+<script>
+    $("#bt").click(function () {
+        $("#span").click();
+    });
+
+</script>
+</body>
+</html>
