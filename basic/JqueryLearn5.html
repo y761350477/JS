@@ -1,0 +1,45 @@
+<!--
+  author YC
+  create 2018/1/3 9:19
+  表单选择器的使用
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JqueryLearn5</title>
+</head>
+<body>
+<form action="javascript:void(0)">
+文本框: <input type="text" name="tt" id="tt"><br>
+密码框: <input type="password" name="pd" id="pd"><br>
+多文本编辑框: <textarea name="ta" id="ta" cols="30" rows="10"></textarea><br>
+单选框: <input type="radio" name="ro">A <input type="radio" name="ro">B
+<br>
+多选框: <input type="checkbox" name="cx" checked>A <input type="checkbox" name="cx" checked><br>B
+<br>
+select下拉框:
+<select name="sct" id="sct">
+    <option value="A">A</option>
+    <option value="B">B</option>
+</select>
+隐藏框: <input type="hidden" name="hn" id="hn"><br>
+submit按钮: <input type="submit" name="st" id= "st" value="提交"><br>
+button按钮: <input type="button" name="bt" id="bt" value="button"><br>
+image按钮: <input type="image" src="../RESOURCE/img/FormSelect.jpg" alt="表单选择器" width="100px" height="100px"><br>
+reset按钮: <input type="radio" name="rt" id="rt"><br>
+file文件域: <input type="file" name="fe" id="fe"><br>
+</form>
+<script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        // 获取表单的个数
+        var getFormLength = $(":input").length;
+        alert(getFormLength);
+
+        $(":checkbox").removeAttr("checked");
+    })
+</script>
+
+</body>
+</html>
