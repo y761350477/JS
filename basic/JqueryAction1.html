@@ -30,6 +30,8 @@
                         .text("显示全部品牌");
                     // 去掉高亮样式
                     $('ul li').removeClass("promoted");
+                    // 更改whole类的文头显示
+                    $(".whole").text("精简");
                 } else {
                     // 显示$category
                     $category.show();
@@ -40,6 +42,8 @@
                     // 添加高亮样式
                     $('ul li').filter(":contains('佳能'), :contains('尼康'), :contains('奥林巴斯')")
                         .addClass("promoted");
+                    // 更改whole类的文头显示
+                    $(".whole").text("全部");
                 }
                 // 超链接不跳转
                 return false;
@@ -48,7 +52,7 @@
     </script>
 </head>
 <body>
-<p>精简: </p>
+<p class="whole">精简: </p>
 <div class="SubCategoryBox">
     <ul>
         <li><a href="javascript:void(0)">佳能</a><i>(30440) </i></li>
