@@ -1,0 +1,63 @@
+<!--
+  author YC
+  create 2018/1/2 22:05
+  背景改变的Demo
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1 {
+            color: gold;
+            border: 1px solid orange;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .div2 {
+            color: orange;
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">div1</div>
+<div class="div2">div2</div>
+<button class="click1" id="click1">click1</button>
+<button class="click2" id="click2">click2</button>
+<br>
+<input type="checkbox" name="status" id="status">点击按钮时先自动重置页面
+<br>
+<input type="reset" name="reset" id="reset">
+<script src="../RESOURCE/lib/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $("button").click(function () {
+            if ($("input[type='checkbox']").is(":checked")) {
+                $("#reset").click();
+            }
+        });
+
+        $("#click1").click(function () {
+            $(".div1").css("background-color", "black");
+        });
+
+        $("#click2").click(function () {
+            $(".div2").css("background-color", "red");
+        });
+
+        $("#reset").click(function () {
+            $("*").removeAttr("style");
+        });
+    });
+</script>
+</body>
+</html>
