@@ -1,0 +1,45 @@
+<!--
+  author YC
+  create 2018/1/12 12:33
+  合成事件:
+    ->hover(enter, leave): 正反的事件;
+    ->toggle(fn1, fn2...fnN): 多次的事件;(注: 在Jquery3.2.1中已经被删除)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SyntheticEvent</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: #FF5500;
+        }
+
+        .div2 {
+            margin-top: 20px;
+            width: 200px;
+            height: 100px;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="div"></div>
+<div class="div2"></div>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $(".div").hover(function () {
+            $(this).next().hide();
+        }, function () {
+            $(this).next().show();
+        });
+    });
+
+</script>
+</body>
+</html>

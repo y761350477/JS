@@ -1,0 +1,81 @@
+<!--
+  author YC
+  create 2018/1/11 13:08
+  事件的操作:
+    ->绑定事件
+    ->冒泡效果
+    ->阻止冒泡
+    ->以上效果的简写形式
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="div1">
+    DIV1
+    <div class="div2">
+        DIV2
+        <div class="div3">DIV3</div>
+    </div>
+</div>
+<br>
+<h1>阻止form提交、超链接点击等默认跳转行为的操作</h1>
+<div class="div">
+    <form action="https://www.baidu.com/" id="form">
+        <input type="text" name="t" id="t"><br>
+        <input type="submit" value="提交">
+    </form>
+    <a href="https://www.baidu.com/" id="a">百度链接</a>
+</div>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        /*绑定事件的设置*/
+        $(".div1").bind("click", function () {
+            alert("div1");
+        });
+
+        /*简写绑定事件的设置*/
+        $(".div2").click(function () {
+            alert("div2");
+        });
+
+        /*冒泡效果*/
+        $(".div3").bind("click", function () {
+            alert("div3");
+        });
+
+        /*阻止冒泡效果*/
+        $(".div3").bind("click", function (event) {
+            alert("div3");
+            // 阻止冒泡
+            event.stopPropagation();
+        });
+
+        /*简写阻止冒泡的效果*/
+        $(".div3").click(function () {
+            alert("div3");
+            // 阻止冒泡
+            return false;
+        });
+
+        /*阻止超链接点击的默认跳转行为*/
+        $("#a").click(function (event) {
+            event.preventDefault();
+            // 简写形式
+            return false;
+        });
+
+        /*阻止form表单的点击默认跳转行为*/
+        $("#form").click(function (event) {
+            event.preventDefault();
+            // 简写形式
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--
+  author YC
+  create 2018/1/12 10:42
+    鼠标事件:
+    ->mousedown(): 当按下鼠标按钮时;
+    ->mouseenter(): 当鼠标指针进入（穿过）元素时;
+    ->mouseleave(): 当鼠标指针离开元素时;
+    ->mousemove(): 当鼠标指针在指定的元素中移动时;(用户把鼠标移动一个像素，就会发生一次 mousemove 事件。处理所有 mousemove 事件会耗费系统资源。请谨慎使用该事件。)
+    ->mouseout(): 当鼠标从元素上移开时;
+    ->mouseover(): 当鼠标指针位于元素上方时时;
+    ->mouseup(): 当松开鼠标按钮时;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChangeEvent</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-color: #FF5500;
+        }
+
+        .div2 {
+            margin-top: 20px;
+            width: 200px;
+            height: 100px;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <div class="div2"></div>
+    <script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            $(".div").mouseleave(function () {
+                $(this).next().hide();
+            });
+
+            $(".div").mouseover(function () {
+                $(this).next().show();
+            });
+        });
+
+    </script>
+</body>
+</html>
