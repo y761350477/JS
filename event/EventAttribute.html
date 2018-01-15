@@ -1,0 +1,56 @@
+<!--
+  author YC
+  create 2018/1/12 13:37
+  事件对象的属性:
+    ->even.type;
+    ->even.preventDefault();
+    ->even.stopPropagation();
+    ->even.target;
+    ->even.relatedTarget;
+    ->even.pageX;
+    ->even.pageY;
+    ->even.which;
+    ->even.metaKey;
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象的属性</title>
+    <style>
+        .div1, .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<a href="https://www.baidu.com/"><span id="s">模拟被点击</span></a>
+<button>Click</button>
+<div class="div1"></div>
+<div class="div2"></div>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    // $("button").bind("nihs", function () {
+    //     alert("nihs");
+    // });
+    //
+    // $("button").click(function () {
+    //     $(this).trigger("nihs");
+    // });
+    $(function () {
+        $(".div1").bind("click.one", function () {
+            alert(1);
+        });
+        $(".div2").bind("click.two", function () {
+            alert(2);
+        });
+        $("button").click(function () {
+            $(".div1").unbind("click!");
+        });
+    });
+
+</script>
+</body>
+</html>
