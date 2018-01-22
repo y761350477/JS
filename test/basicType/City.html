@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="js/City.js"></script>
-    <script src="js/jquery-3.2.1.js"></script>
+    <script src="../../RESOURCE/js/NewCity.js"></script>
+    <script src="../../RESOURCE/js/jquery-3.2.1.js"></script>
 </head>
 <body>
 <select id="cmbProvince" name="cmbProvince"></select>
@@ -12,7 +12,8 @@
 <select id="cmbArea" name="cmbArea"></select>
 <!--<button type="button" onclick="test()">Click</button>-->
 <script type="text/javascript">
-    addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+    new PCAS("cmbProvince", "cmbCity", "cmbArea", "", "", "");
+    // addressInit('cmbProvince', 'cmbCity', 'cmbArea');
     /*$(function () {
 //        document.getElementById("cmbProvince")[2].selected=true;// 设置select的默认选中下标
 

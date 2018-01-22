@@ -1,3 +1,11 @@
+<!--
+  author YC
+  create 2018/1/22 9:22
+  三种对话框:
+    alert("弹出框");
+    confirm("确定框");
+    prompt("输入框");
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +13,13 @@
     <title>EventTest</title>
     <script src="../extra/lib/jquery-3.2.1.js"></script>
     <script>
-        /*三种对话框*/
-        /*alert("弹出框");
-        confirm("确定框");
-        prompt("输入框");*/
-
-        if(confirm("你眼继续吗？")) {
-            alert("继续！");
-        } else {
-            alert("再见！");
-        }
-        var name = prompt("你的名字:");
-        alert("你好"+name);
+        // if(confirm("你想继续吗？")) {
+        //     alert("继续！");
+        // } else {
+        //     alert("再见！");
+        // }
+        // var name = prompt("你的名字:");
+        // alert("你好"+name);
     </script>
 </head>
 <!--
@@ -24,7 +27,7 @@
     onunload页面关闭或者刷新时的操作
     -->
 <!--<body onload="alert('DuDu!')" onunload="alert('HaHa!')">-->
-<body onload="alert('Hi!')" onunload="">
+<body onload="alert('Hi!')" onunload="alert('88')">
 <!--
     onmouseover鼠标进入区域的操作
     onmouseout鼠标离开区域的操作

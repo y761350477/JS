@@ -11,7 +11,7 @@
     3、猜想是否style的属性标签也有上面的效果呢？经验证发现和上面效果一样，可以在文件中任意位置生效，可以多个style标签同时使用；
     发现：
     1、标签外只能使用<!-- --\>注释；
-    2、在标签内可以使用//或者/**/注释；
+    2、在标签内可以使用//或者/**/注释(javascript中, 如果是style中只能使用/**/进行注释)；
     -->
     <script>
         function bt1() {
@@ -26,7 +26,17 @@
     </script>
 </head>
 <body>
-    <button id="bt1" onclick="bt1()">Click1</button><br/>
-    <button id="bt2" onclick="bt2()">Click2</button>
+<div>div1</div>
+<button id="bt1" onclick="bt1()">Click1</button>
+<br/>
+<button id="bt2" onclick="bt2()">Click2</button>
+<!-- 测试style标签是否能在body中使用-->
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+    }
+</style>
 </body>
 </html>

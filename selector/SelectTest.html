@@ -1,0 +1,29 @@
+<!--
+  author YC
+  create 2018/1/10 16:50
+  
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<button id="bt">Click</button>
+<button></button>
+
+<div class="div" id="div" style="width: 200px; height: 200px; border: 1px solid red"></div>
+
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $("#bt").click(function () {
+            $(':empty').css("background", "#bbffaa");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--
+  author YC
+  create 2018/1/15 13:54
+  
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兄弟选择器的操作</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    $("ul :eq(0)").click(function () {
+        alert($(this).text());
+    });
+
+    $("ul li").click(function () {
+        $(this).clone(true).appendTo("ul");
+    })
+</script>
+</body>
+</html>
