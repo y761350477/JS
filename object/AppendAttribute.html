@@ -1,0 +1,38 @@
+<!--
+  author YC
+  create 2018/1/30 13:14
+  添加属性:Object.defineProperty()方式和.运算符的区别
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    var attribute_a = {};
+    attribute_a.a = 1;
+    console.log("点运算符创建的属性: " + attribute_a.a);
+
+    // 如下同上
+    var attribute_b = {};
+    Object.defineProperty(attribute_b, "a", {
+        value: 1,
+        writable: true,
+        configurable: true,
+        enumerable: true
+    });
+    console.log("Object.defineProperty创建的属性: " + attribute_a.a);
+
+    // writable configurable enumerable不显式声明, 属性值默认为false;
+    var attribute_c = {};
+    Object.defineProperty(attribute_c, "a", {
+        value: 1
+    });
+    attribute_c.a = 2;
+    console.log("Object.defineProperty创建的属性(未显式声明描述符的值): " + attribute_a.a);
+</script>
+</body>
+</html>
