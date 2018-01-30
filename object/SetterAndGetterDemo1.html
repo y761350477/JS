@@ -1,0 +1,46 @@
+<!--
+  author YC
+  create 2018/1/30 13:26
+  Setters和Getters的使用示例一
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    function Archiver() {
+        var temperature = null;
+        var archive = [];
+
+        Object.defineProperty(this, 'temperature', {
+            get: function () {
+                console.log('get!');
+                return temperature;
+            },
+            set: function (value) {
+                temperature = value;
+                archive.push({val: temperature});
+            }
+        });
+
+        this.getArchive = function () {
+            return archive;
+        };
+    }
+
+    var arc = new Archiver();
+    var a = arc.temperature; // 'get!'
+    // alert(a);
+    var b = arc.temperature = 11;
+    // alert(b);
+    var c = arc.temperature = 13;
+    // alert(c);
+    var d = arc.getArchive(); // [{ val: 11 }, { val: 13 }]
+    // alert(d[0].val + " - " + d[1].val);
+</script>
+</body>
+</html>
