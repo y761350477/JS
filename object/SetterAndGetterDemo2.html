@@ -1,0 +1,37 @@
+<!--
+  author YC
+  create 2018/1/30 13:36
+  Setters和Getters的使用示例二
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../RESOURCE/js/jquery-3.2.1.js"></script>
+<script>
+    var pattern = {
+        get: function () {
+            return 'I alway return this string,whatever you have assigned';
+        },
+        set: function () {
+            this.myname = 'this is my name string';
+        }
+    };
+
+    function TestDefineSetAndGet() {
+        Object.defineProperty(this, 'myproperty', pattern);
+    }
+
+    var instance = new TestDefineSetAndGet();
+    instance.myproperty = 'test';
+
+    // 'I alway return this string,whatever you have assigned'
+    console.log(instance.myproperty);
+    // 'this is my name string'
+    console.log(instance.myname);
+</script>
+</body>
+</html>
